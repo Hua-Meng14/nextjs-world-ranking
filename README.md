@@ -1,3 +1,8 @@
+## Rest Contries API:
+Document: https://restcountries.com/#rest-countries
+- List all countries: `https://restcountries.com/v3.1/all`
+- Find country by code: `https://restcountries.com/v3.1/alpha/{code}`
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
