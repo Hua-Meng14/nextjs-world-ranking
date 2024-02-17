@@ -66,7 +66,7 @@ const CountriesTable = ({ countries }) => {
 
         <button
           className={styles.heading_name}
-          onClick={() => setValueAndDirection("name")}
+          // onClick={() => setValueAndDirection("name")}
         >
           <div>Name</div>
 
@@ -95,27 +95,27 @@ const CountriesTable = ({ countries }) => {
 
         <button
           className={styles.heading_gini}
-          onClick={() => setValueAndDirection("gini")}
+          // onClick={() => setValueAndDirection("gini")}
         >
-          <div>Gini</div>
+          <div>Capital</div>
 
           {value === "gini" && <SortArrow direction={direction} />}
         </button>
       </div>
 
       {orderedCountries.map((country) => (
-        <Link href={`/country/${country.alpha3Code}`} key={country.name}>
+        <Link href={`/country/${country.cca2}`} key={country.name.common}>
           <div className={styles.row}>
             <div className={styles.flag}>
-              <img src={country.flag} alt={country.name} />
+              <img src={country.flags.png} alt={country.name.common} />
             </div>
-            <div className={styles.name}>{country.name}</div>
+            <div className={styles.name}>{country.name.common}</div>
 
             <div className={styles.population}>{country.population}</div>
 
             <div className={styles.area}>{country.area || 0}</div>
 
-            <div className={styles.gini}>{country.gini || 0} %</div>
+            <div className={styles.gini}>{country.capital || 0} </div>
           </div>
         </Link>
       ))}

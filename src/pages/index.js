@@ -8,24 +8,12 @@ export default function Home({ countries }) {
 
   const [keyword, setKeyword] = useState("");
 
-  // const filterCountries = (keyword) => {
-  //   const filteredCountries = countries;
-
-  //   countries.forEach((country) => {
-  //     const { name } = country;
-  //     if (
-  //       name.official.includes(keyword)
-  //       // region.includes(keyword) ||
-  //       // subregion.includes(keyword)
-  //     ) {
-  //       filteredCountries.push(country);
-  //     }
-  //   });
-
-  //   return filteredCountries;
-  // };
-
-  const filteredCountries = [...countries];
+  const filteredCountries = countries.filter(
+    (country) =>
+      country.name.common.toLowerCase().includes(keyword)
+    // country.region.toLowerCase().includes(keyword) ||
+    // country.subregion.includes(keyword)
+  );
 
   const onInputchange = (e) => {
     e.preventDefault();
@@ -54,7 +42,6 @@ export default function Home({ countries }) {
 export const getStaticProps = async () => {
   const res = await fetch("https://restcountries.com/v3.1/all");
   const countries = await res.json();
-  console.log(countries);
   return {
     props: {
       countries,

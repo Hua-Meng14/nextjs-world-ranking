@@ -90,6 +90,15 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 24px;
   }
+
+  .mapLink {
+    text-decoration: none; /* Remove default underline */
+    color: #007bff; /* Set the link color */
+}
+
+  .mapLink:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
   
   @media screen and (min-width: 720px) {
     .container {
